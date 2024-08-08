@@ -1,2 +1,120 @@
-<h1>hallo Welt</h1>
+<h1>Typescript</h1>
+<h3>01. Einleitung</h3>
+<p>
+  TypeScript ist eine von Microsoft entwickelte Programmiersprache, die 2012
+  eingeführt wurde. Sie ist eine Erweiterung von JavaScript und bietet statische
+  Typisierung, was bedeutet, dass Variablen, Funktionen und Parameter
+  spezifische Datentypen zugewiesen werden können. Dies ermöglicht eine
+  frühzeitige Fehlererkennung und verbessert die Codequalität sowie die
+  Lesbarkeit des Codes <br />
+  <b>Vorteile und Einsatzgebiete von TypeScript</b> <br />
+  . Statische Typisierung: Im Gegensatz zu JavaScript, das dynamisch typisiert
+  ist, erlaubt TypeScript die Deklaration von Datentypen, was die Fehleranalyse
+  verbessert und die Entwicklung beschleunigt. <br />
+  . Integration mit JavaScript: TypeScript ist ein Superset von JavaScript, was
+  bedeutet, dass jeder gültige JavaScript-Code auch in TypeScript funktioniert.
+  Dies erleichtert die schrittweise Umstellung von bestehenden Projekten auf
+  TypeScript. <br />
+  . Verbesserte Codequalität: Durch die statische Typisierung und zusätzliche
+  Funktionen wie Klassen und Module wird der Code wartbarer und skalierbarer.
+  <br />
+  . Anwendungsbereiche: TypeScript wird häufig in großen
+  Webentwicklungsprojekten eingesetzt, sowohl im Frontend als auch im Backend
+  mit Node.js. Es ist auch in der Cross-Plattform-Entwicklung, z.B. mit React
+  Native, und in der Spieleentwicklung nützlich. <br />
+  <b>Verwendung von TypeScript</b> <br />
+  Um TypeScript in einem Projekt zu verwenden, muss der TypeScript-Compiler
+  installiert werden. Dies kann mit npm, einem Paketmanager für JavaScript,
+  erfolgen. Der folgende Befehl installiert TypeScript als
+  Entwicklungsabhängigkeit: <b>npm install -D typescript</b> <br />Nach der
+  Installation kann der Compiler mit dem Befehl npx tsc aufgerufen werden, um
+  TypeScript-Dateien in JavaScript zu kompilieren. TypeScript eignet sich
+  besonders für Projekte, die eine hohe Codequalität und Wartbarkeit erfordern,
+  und ist ideal für Entwickler, die von den Vorteilen der statischen Typisierung
+  profitieren möchten, ohne auf die Flexibilität von JavaScript verzichten zu
+  müssen.
+</p>
+<h3>02. Primitive types</h3>
+<p>
+  theString = ' das ist ein String'; <br />
+  theNumber = 123456789; theBoolean = true; <br />
+  theUndefined = undefined; <br />
+  theNull = null;
+</p>
+<h3>03. Der "any" type</h3>
+<p>theAnyType; // benutzt ihm nie und wenn a sein muss nur auf notfall</p>
+<h3>04. Types zuweisen</h3>
+<p>
+  theTypeless: number;<br />
+  this.theTypeless = 30; <br /><br />
+  theTypeless: string;<br />
+  this.theTypeless = 'hallo Welt'; <br />
+</p>
+<h3>05. types bei Arrays und Funktionen</h3>
+<p>
+  theArray: number[ ] = [1, 4];<br />
+  theArray: string[ ] = ["hallo Welt!"];
+  <br />theArray: boolean [ ] = [true]; <br />theArray: (number | string) [ ]
+  =[4, "Hallo Welt!"]; <br />theArray: number [ ] | string [ ] =[4, 7, 9];
+  <br />theArray: number [ ] | string [ ] = "]; <br />theArray: (number |
+  string) [ ] | boolean [ ] =[true]; <br />theArray: (number | string) [ ] |
+  boolean [ ] =[2, 3, "Hallo"];
+</p>
+
+<p>
+  <b>Beispiel</b><br />
+  theArray: (number | string) [] | boolean [] = []; <br />
+  <b>constructor() / </b><br />
+  this.theArray = [true] <br />
+  this.add(7, 8.09876) /<br /><br />
+  add(a: number,b:number): number return a + b;
+</p>
+
+<h3>06. literals und tupels</h3>
+<p>
+  <b>literals </b><br />
+  Literals in TypeScript sind feste, unveränderliche Werte, die direkt im Code
+  angegeben werden. <br />
+  Es gibt verschiedene Arten von Literals, z. B. <br />Zeichenketten, Zahlen,
+  boolesche Werte und spezielle Typen. <br />
+  <b>Beispiele:</b> <br />
+  . String Literal: Ein Text, der in Anführungszeichen steht. <br />
+  let greeting: "Hallo" = "Hallo"; <br />
+  .Number Literal: Eine konkrete Zahl. <br />
+  let age: 30 = 30; <br />
+  . Boolean Literal: Entweder true oder false. <br />
+  let isActive: true = true; <br />
+  In TypeScript können Literals auch verwendet werden, um bestimmte Werte zu
+  erzwingen. Wenn du z. B. eine Variable hast, die nur bestimmte Werte annehmen
+  darf, kannst du dies mit Literaltypen festlegen: <br />
+  type Direction = "links" | "rechts" | "oben" | "unten"; <br />
+
+  let move: Direction; <br />
+  move = "links"; // gültig <br />
+  move = "unten"; // gültig <br />
+  move = "vorwärts"; // Fehler: "vorwärts" ist kein gültiger Wert <br />
+  <br />
+  <b>Tupel in TypeScript</b> <br />
+  Ein Tupel ist eine spezielle Art von Array, bei dem die Anzahl der Elemente
+  und deren Typen festgelegt sind. Das bedeutet, dass ein Tupel genau eine
+  bestimmte Anzahl von Werten eines bestimmten Typs enthält, und jeder Wert im
+  Tupel hat einen definierten Typ. <br />
+  let user: [string, number]; <br />
+  user = ["Alice", 30]; // gültig <br />
+  user = [30, "Alice"]; // Fehler: falsche Reihenfolge der Typen <br />
+  In diesem Beispiel ist user ein Tupel, das genau zwei Werte enthält: <br />
+  1. Ein string (Name der Person) <br />
+  2. Eine number (Alter der Person) <br />
+  Tupel sind nützlich, wenn du eine feste Struktur brauchst, z. B. um Daten mit
+  einer festen Anzahl von Attributen zu speichern, aber du dennoch sicherstellen
+  möchtest, dass die Typen an der richtigen Stelle sind.
+</p>
+<h3>07. types bei Objekten</h3>
+<p></p>
+<h3>08.</h3>
+<p></p>
+<h3>09.</h3>
+<p></p>
+<h3>10.</h3>
+<p></p>
 <router-outlet />

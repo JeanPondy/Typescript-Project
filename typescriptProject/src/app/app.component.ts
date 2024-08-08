@@ -9,5 +9,15 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'typescriptProject';
+
+theArray: (number | string) [] | boolean []  = [];
+
+constructor(){
+  this.theArray = [true]
+  this.add(7, 8.09876)
+}
+
+add(a: number,b:number): number{
+  return a + b;
+}
 }
